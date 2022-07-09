@@ -40,7 +40,7 @@ Examples:
     showFirstAndLast(['hi', 'goodbye', 'smile']) // ['hi', 'ge', 'se']
 
 */
-function showFirstAndLast(arr){
+function showFirstAndLast(arr) {
     let newArray = [];
     arr.forEach(function(value) {
         let lastIndex = value.length - 1;
@@ -58,8 +58,11 @@ Examples:
     // [{name: 'Elie', title:'instructor'}, {name: 'Tim', title:'instructor'}, {name: 'Matt', title:'instructor'}, {name: 'Colt', title:'instructor'}]
 
 */
-function addKeyAndValue(arr,key,value){
-    
+function addKeyAndValue(arr, key, value){
+    arr.forEach(function(obj) {
+        obj[key] = value;
+    })
+    return arr;
 }
 
 /*
@@ -73,7 +76,20 @@ Examples:
     vowelCount('I Am awesome and so are you') // {i: 1, a: 4, e: 3, o: 3, u: 1};
 */
 function vowelCount(str){
-   
+    const lowerStr = Array.from(str.toLowerCase());
+    let newObj = {};
+    // const vowels = 'aeiou';
+
+    lowerStr.forEach(function(letter) {
+        if(letter.match(/[aeiou]/)) {
+            if(newObj[letter]) {
+                newObj[letter] += 1;
+            } else {
+                newObj[letter] = 1;
+            }
+        }
+    });
+    return newObj;
 }
 
 /*
