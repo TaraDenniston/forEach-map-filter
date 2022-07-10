@@ -78,7 +78,6 @@ Examples:
 function vowelCount(str){
     const lowerStr = Array.from(str.toLowerCase());
     let newObj = {};
-    // const vowels = 'aeiou';
 
     lowerStr.forEach(function(letter) {
         if(letter.match(/[aeiou]/)) {
@@ -100,7 +99,11 @@ Examples:
     doubleValuesWithMap([1,-2,-3]) // [2,-4,-6]
 */
 
-function doubleValuesWithMap(arr) {}
+function doubleValuesWithMap(arr) {
+    return arr.map(function(value) {
+        return value * 2;
+    });
+}
 
 /*
 Write a function called valTimesIndex which accepts an array and returns a new array with each value multiplied by the index it is currently at in the array.
@@ -111,7 +114,9 @@ Examples:
 */
 
 function valTimesIndex(arr){
-    
+    return arr.map(function(value, index) {
+        return value * index;
+    });
 }
 
 /*
@@ -122,7 +127,9 @@ Examples:
 */
 
 function extractKey(arr, key){
-    
+    return arr.map(function(keyValuePair) {
+        return keyValuePair[key];
+    });
 }
 
 /*
@@ -133,7 +140,9 @@ Examples:
 */
 
 function extractFullName(arr){
-    
+    return arr.map(function(obj) {
+        return obj.first + ' ' + obj.last;
+    });
 }
 
 /*
